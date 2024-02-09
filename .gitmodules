@@ -1,0 +1,30 @@
+[submodule "components/core"]
+	path = components/core
+	url = https://github.com/deso-protocol/core
+[submodule "components/backend"]
+	path = components/backend
+	url = https://github.com/deso-protocol/backend
+[submodule "components/frontend"]
+	path = components/frontend
+	url = https://github.com/deso-protocol/frontend
+[submodule "components/run"]
+	path = components/run
+	url = https://github.com/deso-protocol/run
+[submodule "components/identity"]
+	path = components/identity
+	url = https://github.com/deso-protocol/identity
+[submodule "components/docs"]
+	path = components/docs
+	url = https://github.com/deso-protocol/docs
+[submodule "components/explorer"]
+	path = components/explorer
+	url = https://github.com/deso-protocol/explorer
+[submodule "components/rosetta-deso"]
+	path = components/rosetta-deso
+	url = https://github.com/deso-protocol/rosetta-deso
+[submodule "components/DeSo.py"]
+	path = components/DeSo.py
+	url = https://github.com/ItsAditya-xyz/DeSo.py
+[submodule "components/deso-examples-react"]
+	path = components/deso-examples-react
+	url = https://github.com/deso-protocol/deso-examples-react
