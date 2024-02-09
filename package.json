@@ -1,0 +1,6 @@
+{
+  "dependencies": {
+    "arweave": "^1.14.4",
+    "deso-protocol": "^2.6.5"
+  }
+}
