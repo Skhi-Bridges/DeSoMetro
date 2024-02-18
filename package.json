@@ -1,0 +1,11 @@
+{
+  "dependencies": {
+    "arweave": "^1.14.4",
+    "axios": "^1.6.7",
+    "deso-protocol": "^2.6.5",
+    "dotenv": "^16.4.4",
+    "express": "^4.18.2",
+    "jsonwebtoken": "^9.0.2",
+    "web3": "^4.5.0"
+  }
+}

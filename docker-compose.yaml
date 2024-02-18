@@ -1,0 +1,112 @@
+version: '3.8'
+
+services:
+  deso-core:
+    build: ./components/core
+    container_name: deso-core
+    ports:
+      - "5000:5000"
+    volumes:
+      - core-data:/var/lib/deso-core
+    environment:
+      - CORE_ENV=production
+
+  deso-backend:
+    build: ./components/backend/Dockerfile
+    container_name: deso-backend
+    mem_limit: 500m
+    restart: unless-stopped
+    ports:
+      - "5001:5001"
+    volumes:
+      - backend-data:/var/lib/deso-backend
+    environment:
+      - BACKEND_ENV=production
+    depends_on:
+      - deso-core
+      - db
+      - pgdb
+
+  deso-frontend:
+    build: ./components/frontend/Dockerfile
+    container_name: deso-frontend
+    ports:
+      - "80:80"
+    environment:
+      - FRONTEND_ENV=production
+    depends_on:
+      - deso-backend
+
+  deso-identity:
+    build: ./components/identity/Dockerfile
+    container_name: deso-identity
+    ports:
+      - "5002:5002"
+    depends_on:
+      - deso-backend
+
+  deso-explorer:
+    build: ./components/explorer/Dockerfile
+    container_name: deso-explorer
+    ports:
+      - "5004:5004"
+    depends_on:
+      - deso-backend
+
+  deso-examples-react:
+    build: ./components/deso-examples-react
+    container_name: deso-examples-react
+    ports:
+      - "3000:3000"
+    depends_on:
+      - deso-frontend
+
+  deso-run:
+    build: ./components/run
+    container_name: deso-run
+    ports:
+      - "5005:5005"
+    depends_on:
+      - deso-backend
+
+  db:
+    image: mysql:8.0
+    container_name: mysql_db
+    cap_add:
+      - SYS_NICE
+    restart: always
+    environment:
+      - MYSQL_DATABASE=ardrive
+      - MYSQL_ROOT_PASSWORD=your_mysql_root_password
+    ports:
+      - '3306:3306'
+    volumes:
+      - mysql_data:/var/lib/mysql
+
+  pgdb:
+    image: postgres:14.1-alpine
+    container_name: postgres_db
+    environment:
+      - POSTGRES_DB=ardrive
+      - POSTGRES_USER=your_postgres_user
+      - POSTGRES_PASSWORD=your_postgres_password
+    ports:
+      - '5432:5432'
+    volumes:
+      - postgres_data:/var/lib/postgresql/data
+
+  arweave:
+    image: arweaveinc/arweave:latest # Placeholder, ensure correct image
+    container_name: deso-arweave
+    ports:
+      - "1984:1984"
+    volumes:
+      - arweave_data:/var/lib/arweave
+
+volumes:
+  core-data:
+  backend-data:
+  mysql_data:
+  postgres_data:
+  arweave_data:
+
