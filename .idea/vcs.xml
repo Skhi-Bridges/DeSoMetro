@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="VcsDirectoryMappings">
+    <mapping directory="" vcs="Git" />
+    <mapping directory="$PROJECT_DIR$/core" vcs="Git" />
+    <mapping directory="$PROJECT_DIR$/deso-chat-protocol" vcs="Git" />
+    <mapping directory="$PROJECT_DIR$/deso-examples-react" vcs="Git" />
+    <mapping directory="$PROJECT_DIR$/deso-js" vcs="Git" />
+    <mapping directory="$PROJECT_DIR$/dips" vcs="Git" />
+    <mapping directory="$PROJECT_DIR$/docs" vcs="Git" />
+    <mapping directory="$PROJECT_DIR$/explorer" vcs="Git" />
+    <mapping directory="$PROJECT_DIR$/frontend" vcs="Git" />
+    <mapping directory="$PROJECT_DIR$/libvips" vcs="Git" />
+    <mapping directory="$PROJECT_DIR$/rosetta-deso" vcs="Git" />
+    <mapping directory="$PROJECT_DIR$/run" vcs="Git" />
+  </component>
+</project>
